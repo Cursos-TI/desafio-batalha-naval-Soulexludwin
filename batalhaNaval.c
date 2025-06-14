@@ -3,7 +3,8 @@
 
 #define TAM 10
 #define TAM_NAVIO 3
-#define TAM_HAB 5 // Tamanho das matrizes de habilidade (5x5)
+#define TAM_HAB 5 
+//Tamanho das matrizes de habilidade (5x5)
 
 // Função para imprimir o tabuleiro com símbolos
 void imprime_tabuleiro(int tabuleiro[TAM][TAM]) {
@@ -16,7 +17,7 @@ void imprime_tabuleiro(int tabuleiro[TAM][TAM]) {
             else if (tabuleiro[i][j] == 5)
                 printf("* "); // Área de habilidade
             else
-                printf("? "); // Outro (não esperado)
+                printf("? "); 
         }
         printf("\n");
     }
@@ -76,13 +77,13 @@ void aplica_habilidade(int tabuleiro[TAM][TAM], int mat[TAM_HAB][TAM_HAB], int o
 int main() {
     int tabuleiro[TAM][TAM] = {0};
 
-    // Posicionamento dos navios (igual ao seu código)
+    //posição
     int l_h = 1, c_h = 2; // Horizontal
     int l_v = 5, c_v = 7; // Vertical
     int l_d1 = 0, c_d1 = 0; // Diagonal principal (↘)
     int l_d2 = 7, c_d2 = 2; // Diagonal secundária (↙)
 
-    // Validação dos limites (igual ao seu código)
+    // Validação dos limites
     if (l_h < 0 || l_h >= TAM || c_h < 0 || c_h + TAM_NAVIO - 1 >= TAM) {
         printf("Coordenadas inválidas para navio horizontal.\n");
         return 1;
@@ -100,7 +101,7 @@ int main() {
         return 1;
     }
 
-    // Checagem de sobreposição (igual ao seu código)
+    // Checagem de sobreposição
     int ocupado[TAM][TAM] = {0};
     int sobreposicao = 0;
     for (int i = 0; i < TAM_NAVIO; i++) {
